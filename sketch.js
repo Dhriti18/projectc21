@@ -7,21 +7,22 @@ function setup() {
   weight=random(30,52);
  thickness=random(22,83);
   
- bullet=createSprite(100,210,10,10);
+ bullet=createSprite(100,210,10,20);
 bullet.velocityX=speed;
-
+bullet.debug=true;
   bullet.shapeColor="white";
- 
+ //bullet.depth=wall.depth+1;
   
-  
+
   wall=createSprite(1200,200,thickness,height/2);
   wall.shapeColour=color(80,80,80);
-
+  wall.debug=true;
 }
 
 function draw() {
   background(0);
   drawSprites();
+  
 
 bullet.depth=wall.depth+1;
   if(hascollided(wall,bullet)){
@@ -34,7 +35,7 @@ wall.shapeColor=color(255,0,0);
 }
 
 if(damage<10){
-wall.shapeColor=color(0,255,0);
+  wall.shapeColor=color(0,255,0);
   
   }
   }
