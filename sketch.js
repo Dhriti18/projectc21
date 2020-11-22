@@ -7,7 +7,7 @@ function setup() {
   weight=random(30,52);
  thickness=random(22,83);
   
- bullet=createSprite(100,210,20,50);
+ bullet=createSprite(100,210,10,10);
 bullet.velocityX=speed;
 
   bullet.shapeColor="white";
@@ -29,12 +29,12 @@ bullet.depth=wall.depth+1;
 
 var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
 if(damage>10){
-bullet.shapeColor=color(255,0,0);
+wall.shapeColor=color(255,0,0);
 
 }
 
 if(damage<10){
-  bullet.shapeColor=color(0,255,0);
+wall.shapeColor=color(0,255,0);
   
   }
   }
